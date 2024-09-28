@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- load latest version -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AnwarAchilles/nirvana-native-css@main/nirvana.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  
+  <div id="background"></div>
+  <div id="background-effect"></div>
+  <div id="background-image"></div>
+  
+  <div misc="d-none">
+    <audio id="sound-background-menu" src="./assets/Collapsing World.mp3"></audio>
+    <audio id="sound-background-game" src="./assets/Eternxlkz - SLAY! (Official Audio).mp3"></audio>
+    <audio id="sound-encourage" src="./assets/voices/start.wav"></audio>
+
+    <audio id="sound-selected" src="./assets/sounds/selected.mp3"></audio>
+    <audio id="sound-coin" src="./assets/sounds/coin.mp3"></audio>
+    <audio id="sound-slash" src="./assets/sounds/slash.mp3"></audio>
+    <audio id="sound-bomb" src="./assets/sounds/bomb.mp3"></audio>
+
+    <audio id="sound-voice-1-1" src="./assets/voices/1/1.wav"></audio>
+    <audio id="sound-voice-1-2" src="./assets/voices/1/2.wav"></audio>
+    <audio id="sound-voice-1-3" src="./assets/voices/1/3.wav"></audio>
+    <audio id="sound-voice-2-1" src="./assets/voices/2/1.wav"></audio>
+    <audio id="sound-voice-2-2" src="./assets/voices/2/2.wav"></audio>
+    <audio id="sound-voice-2-3" src="./assets/voices/2/3.wav"></audio>
+    <audio id="sound-voice-3-1" src="./assets/voices/3/1.wav"></audio>
+    <audio id="sound-voice-3-2" src="./assets/voices/3/2.wav"></audio>
+    <audio id="sound-voice-3-3" src="./assets/voices/3/3.wav"></audio>
+  </div>
+
+  <div nirvana-router="Main"></div>
+
+  <div nirvana-component="Loading" size="w-1 h-1" misc="p-fixed">
+    <div container flex="between column" size="w-1 h-1">
+      <div size="w-1 p-2" text="center">
+        <small>Akan dijadwalkan tayang pada - 18/14/2025</small>
+      </div>
+      <div size="w-1" text="center">
+        <div size="mb-4">
+          <h1 style="font-size:5rem"><b>Clash King</b></h1>
+          <p>Be the best player.</p>
+        </div>
+      </div>
+      <div size="w-1">
+        <div size="mb-4">
+          <div size="mb-1">
+            <small id="loading-percentage">0%</small>
+            <small>please wait..</small>
+          </div>
+          <div id="loading-bar">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div nirvana-component="Register" size="w-1 h-1" misc="p-fixed">
+    <div container flex="between column" size="w-1 h-1">
+      <div size="w-1 p-2" text="center">
+        <small>Akan dijadwalkan tayang pada - 18/14/2025</small>
+      </div>
+      <div size="w-1" text="center" size="p-2">
+        <h1><b>Register</b></h3>
+        <p>You will be logged in as a visitor, or you can enter your username.</p>
+        <hr size="my-5 w-2">
+        <form action="#" onsubmit="Nirvana.run('Register').submit(event)">
+          <div>
+            <label for="name" size="mb-1" misc="d-block">Fill Your Username</label>
+            <input id="register-username" type="text" name="name" placeholder="JhonDoe" size="py-2 px-3" text="center" required="required">
+          </div>
+          <div button-container>
+            <button type="submit" button="secondary">Continue to Game</button>
+          </div>
+        </form>
+        <!-- dialog -->
+        <div id="disclaimer" dialog>
+          <!-- dialog content -->
+          <div dialog-content container>
+            <div size="py-4 px-3">
+              <h2>Disclaimer</h2>
+              <p>This section provides a detailed description of the external resources, assets, and plugins used in the development of this project. We acknowledge and give credit to the creators of the models, music, sound effects, and tools featured throughout the application. Please review the information below for more details on the respective sources.</p>
+              <hr size="my-4 w-2">
+              <div text="start">
+                <div>
+                  <p>Character model dibuat menggunakan Bing Image Creator, sebuah alat AI untuk menghasilkan gambar karakter yang unik dan kreatif berdasarkan prompt.</p>
+                  <a href="https://www.bing.com/images/create" target="_blank">https://www.bing.com/images/create</a>
+                </div>
+                <div>
+                  <p>Character description dihasilkan melalui ChatGPT dari OpenAI, sebuah AI language model yang membantu mendeskripsikan karakter secara mendetail.</p>
+                  <a href="https://openai.com/chatgpt" target="_blank">https://openai.com/chatgpt</a>
+                </div>
+                <div>
+                  <p>Musik menu utama berjudul "Collapsing World" oleh Lightscape, memberikan suasana epik dan mendalam untuk menyambut pengguna dalam aplikasi/game.</p>
+                  <a href="https://www.youtube.com/watch?v=3MMosney1Iw" target="_blank">https://www.youtube.com/watch?v=3MMosney1Iw</a>
+                </div>
+                <div>
+                  <p>Musik untuk medan pertempuran berjudul "SLAY!" oleh Eternxlkz, menambah ketegangan dan semangat dalam suasana pertempuran yang seru.</p>
+                  <a href="https://www.youtube.com/watch?v=qlzcHe_gusE" target="_blank">https://www.youtube.com/watch?v=qlzcHe_gusE</a>
+                </div>
+                <div>
+                  <p>Voice over dihasilkan menggunakan synthesizer suara AI dari Hugging Face, memberikan suara karakter dengan kualitas tinggi dan presisi.</p>
+                  <a href="https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer" target="_blank">https://huggingface.co/spaces/Plachta/VITS-Umamusume-voice-synthesizer</a>
+                </div>
+                <div>
+                  <p>Efek suara klik diambil dari FreeSound.org dan berlisensi gratis untuk penggunaan dalam proyek ini.</p>
+                  <a href="https://freesound.org/people/Jose.darck.779/sounds/404147" target="_blank">https://freesound.org/people/Jose.darck.779/sounds/404147</a>
+                </div>
+                <div>
+                  <p>Efek suara koin diambil dari FreeSound.org dan digunakan sebagai efek ketika pengguna mengumpulkan atau mendapatkan poin/koin.</p>
+                  <a href="https://freesound.org/people/NenadSimic/sounds/171756" target="_blank">https://freesound.org/people/NenadSimic/sounds/171756</a>
+                </div>
+                <div>
+                  <p>Efek suara slash (tebasan) yang diambil dari FreeSound.org menambah intensitas dalam animasi pertarungan atau aksi lainnya.</p>
+                  <a href="https://freesound.org/people/ethanchase7744/sounds/441666" target="_blank">https://freesound.org/people/ethanchase7744/sounds/441666</a>
+                </div>
+                <div>
+                  <p>Efek suara bom yang meledak digunakan untuk memberikan dampak dramatis di adegan yang membutuhkan efek suara eksplosif.</p>
+                  <a href="https://freesound.org/people/zimbot/sounds/117137" target="_blank">https://freesound.org/people/zimbot/sounds/117137</a>
+                </div>
+                <div>
+                  <p>Plugin QR code digunakan untuk menghasilkan QR code yang dapat dipindai untuk berbagai fungsi, diambil dari proyek open-source di GitHub.</p>
+                  <a href="https://github.com/papnkukn/qrcode-svg" target="_blank">https://github.com/papnkukn/qrcode-svg</a>
+                </div>
+                <div>
+                  <p>Plugin CSS dari NirvanaCSS digunakan untuk mempercantik tampilan web dengan gaya yang fleksibel dan ringan.</p>
+                  <a href="https://nirvanacss.anwarachilles.my.id" target="_blank">https://nirvanacss.anwarachilles.my.id</a>
+                </div>
+                <div>
+                  <p>Plugin JS dari NirvanaJS digunakan untuk menyediakan berbagai fitur interaktif yang dinamis pada halaman web atau aplikasi.</p>
+                  <a href="https://nirvanajs.anwarachilles.my.id" target="_blank">https://nirvanajs.anwarachilles.my.id</a>
+                </div>                
+              </div>
+            </div>
+            <button dialog-close="disclaimer">Close Dialog</button>
+          </div>
+        </div>
+      </div>
+      <button dialog-open="disclaimer">Read the Disclaimer for more details</button>
+    </div>
+  </div>
+
+  <div nirvana-component="Hero" size="w-1 h-1" misc="p-fixed" id="menu">
+    <div container flex="between column" size="h-1">
+      <div size="p-2 mb-2">
+        <h1><b>Choose Hero</b></h1>
+        <p>
+          Each hero will have their own unique skills, choose one to help you win the match.
+        </p>
+      </div>
+      <div flex="between middle" size="w-1 h-expand">
+        <div size="w-1 p-1" sm:size="w-3" flex="between column" style="z-index: 2;">
+          <div id="character-select" flex="center column">
+            <div size="p-1">
+              <button onclick="Nirvana.run('Hero').change(this, 1)">
+                <div class="shadow"></div>
+                <div class="character" style="background-image: url('./assets/char-1.jpeg');"></div>
+              </button>
+            </div>
+            <div size="p-1">
+              <button onclick="Nirvana.run('Hero').change(this, 2)">
+                <div class="shadow"></div>
+                <div class="character" style="background-image: url('./assets/char-2.jpeg');"></div>
+              </button>
+            </div>
+            <div size="p-1">
+              <button onclick="Nirvana.run('Hero').change(this, 3)">
+                <div class="shadow"></div>
+                <div class="character" style="background-image: url('./assets/char-3.jpeg');"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="character-description-container" size="w-1" sm:size="w-expand" flex="middle center" style="z-index: 1;">
+          <div id="character-description" size="p-3 w-1">
+            <div size="mb-3">
+              <h4 size="mb-3"><b id="character-name"></b></h4>
+              <p id="character-quote-japan" misc="d-block" style="width: 80%;" size="mb-1"></p>
+              <p id="character-quote-english" misc="d-block" style="width: 80%;" size="mb-1"></p>
+            </div>
+            <div id="character-chart-container" sm:size="w-2">
+              <canvas id="character-chart" size="w-1"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div text="end">
+        <div button-container>
+          <button onclick="Nirvana.run('Hero').play()" button="secondary">Play Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div nirvana-component="Prepare" size="w-1 h-1" misc="p-fixed">
+    <div container flex="between column" size="w-1 h-1">
+      <div size="w-1 p-3" text="center">
+        <h4><b>Preparation the battlefield</b></h5>
+        <small>We have prepared the battlefield for you, please wait..</small>
+      </div>
+      <div size="w-1 p-2" text="center">
+        <div id="prepare-character">
+          <div class="shadow"></div>
+          <img src="#" alt="prepare-character" width="150px" height="250px">
+        </div>
+      </div>
+      <div size="w-1 p-2" text="center">
+        <small misc="d-block" size="mb-1"><b>Come on, warriors! Show your strength and prove who is the best in this battlefield!</b></small>
+        <small misc="d-block">さあ、戦士たちよ！強さを見せつけ、この戦場で誰が一番かを証明せよ！</small>
+      </div>
+    </div>
+  </div>
+
+  <div nirvana-component="Game" size="w-1 h-1" misc="p-fixed">
+    <div id="game-blocked" flex="middle center">
+      <div text="center">
+        <h6>You lost, but don't give up, keep trying again.</h6>
+        <form action="#" onsubmit="Nirvana.run('Game').result(event)">
+          <div button-container>
+            <button type="submit" button="secondary">View Your Result</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div container flex="between column" size="h-1" text="center">
+      <div size="p-3">
+        <h5><b>Choose Card</b></h5>
+        <p>Tap the card, game will end if you find a 💣 bomb.</p>
+      </div>
+      <div id="game-arena" flex="wrap center" size="p-3"></div>
+      <div size="p-3">
+        <h5>Score</h5>
+        <h3 id="game-score">0</h3>
+      </div>
+    </div>
+  </div>
+
+  <div nirvana-component="Result" size="w-1 h-1" misc="p-fixed">
+    <div container flex="between column" size="w-1 h-1" style="overflow: auto;">
+      <div size="py-3">
+        <h2><b>Your Result</b></h2>
+        <p>Thanks for playing.</p>
+      </div>
+      <div flex="column middle" sm:flex="row">
+        <div size="p-5">
+          <div id="result-qrcode"></div>
+          <div text="center" size="p-2"><b>Scan Here</b></div>
+        </div>
+        <div size="p-2">
+          <table>
+            <tr>
+              <th>Username</th>
+              <th>:</th>
+              <td><p text="h5" id="result-name"></p></td>
+            </tr>
+            <tr>
+              <th>Hero</th>
+              <th>:</th>
+              <td><p text="h5" id="result-hero"></p></td>
+            </tr>
+            <tr>
+              <th>Scores</th>
+              <th>:</th>
+              <td><p text="h5" id="result-score"></p></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div size="p-3">
+        <div button-container>
+          <button onclick="Nirvana.run('Result').share()" button="secondary">Share To Friend</button>
+        </div>
+        <div button-container>
+          <button onclick="Nirvana.run('Result').playAgain()" button="secondary">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AnwarAchilles/nirvana-native-js@main/nirvana.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/papnkukn/qrcode-svg@master/dist/qrcode.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

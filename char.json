@@ -1,0 +1,60 @@
+[
+  {},
+  {
+    "name": "Akiyama Kira",
+    "image": "./assets/char-1.jpeg",
+    "state": [2, 5, 2, 8, 4],
+    "quote": {
+      "english": [
+        "",
+        "The blade speaks louder than words. Step closer, and you will hear its song.",
+        "A single strike is all it takes.",
+        "I am the calm before the storm. Don't mistake it for weakness."
+      ],
+      "japan": [
+        "",
+        "刃は言葉よりも雄弁だ。一歩近づけば、その歌が聞こえるだろう。",
+        "一撃で十分だ。",
+        "嵐の前の静けさを弱さと勘違いするな。"
+      ]
+    }
+  },
+  {
+    "name": "Astrid Valen",
+    "image": "./assets/char-2.jpeg",
+    "state": [3, 2, 5, 2, 7],
+    "quote": {
+      "english": [
+        "",
+        "One shot, one chance. Don't waste it.",
+        "Precision is key, hesitation is death.",
+        "You may run, but my bullet always finds its mark."
+      ],
+      "japan": [
+        "",
+        "一発、一度のチャンス。無駄にするな。",
+        "正確さが命、ためらいは死。",
+        "逃げても無駄だ、弾丸は必ず標的に届く。"
+      ]
+    }
+  },
+  {
+    "name": "Violette Nyx",
+    "image": "./assets/char-3.jpeg",
+    "state": [1, 5, 4, 8, 7],
+    "quote": {
+      "english": [
+        "",
+        "The shadows bend to my will, and so will you.",
+        "Magic is neither good nor evil—only the wielder decides.",
+        "In darkness, I find my strength. In violet, I find my power."
+      ],
+      "japan": [
+        "",
+        "影は私の意志に従い、あなたもそうなるだろう。",
+        "魔法は善でも悪でもない。使う者が決めるだけだ。",
+        "闇の中で私は力を見つけ、紫の中で私は力を得る。"
+      ]
+    }
+  }
+]
